@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src/ICS2602.java</name>
-			<type>1</type>
-			<location>C:/Users/Angela/Downloads/ICS2602.java</location>
-		</link>
-	</linkedResources>
 </projectDescription>
