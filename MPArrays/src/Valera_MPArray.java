@@ -13,8 +13,15 @@ public class Valera_MPArray {
 		
 		// Menu Section
 		String[] menuCategs = {"Breakfast", "Lunch", "Dinner"};
-		String[][] menuFoods = {{"Pancakes", "Omelette", "Coffee", "Toast", "Juice"},{"Burger", "Pasta", "Salad", "Rice Meal", "Soda"},{"Steak", "Fish", "Soup", "Fried Rice", "Tea"}};
-		int[][] menuFoodPrices = {{50,45,30,25,35}, {80,70,60,75,25},{150,120,60,70,30}};
+		String[][] menuFoods = {
+				{"Pancakes", "Omelette", "Coffee", "Toast", "Juice"},
+				{"Burger", "Pasta", "Salad", "Rice Meal", "Soda"},
+				{"Steak", "Fish", "Soup", "Fried Rice", "Tea"}};
+		
+		int[][] menuFoodPrices = {
+				{50,45,30,25,35}, 
+				{80,70,60,75,25},
+				{150,120,60,70,30}};
 		
 		// Student Order Section
 		int[][] orderPrice = new int[5][];
@@ -36,24 +43,22 @@ public class Valera_MPArray {
 			data.studentNames[rowIndex] = in.next();
 		}
 		out.println("| Names Recorded! Moving on...");
-		out.println("+==============>\n");
+		out.println("+====================>\n");
 		
 		// Menu Printing
-		out.println("+== MENU ======>");
+		out.println("+== MENU ========================================================================================>");
+		out.printf("| %-13s | %-13s | %-13s | %-13s | %-13s | %-13s%n", "Category", "Index [0]", "Index [1]", "Index [2]", "Index [3]", "Index [4]");
 		for (int rowIndex = 0; rowIndex < data.menuCategs.length; rowIndex++) {
-			out.printf("| > %s%n", data.menuCategs[rowIndex]);
+			out.printf("| [%d]%-11s", rowIndex, data.menuCategs[rowIndex]);
 			for (int columnIndex = 0; columnIndex < data.menuFoods[rowIndex].length; columnIndex++) {
-				out.printf("| | [%d][%d] %s - %d%n",rowIndex, columnIndex, data.menuFoods[rowIndex][columnIndex], data.menuFoodPrices[rowIndex][columnIndex]);
+				out.printf("| %-10s%3d ", data.menuFoods[rowIndex][columnIndex], data.menuFoodPrices[rowIndex][columnIndex]);
 			}
-			if (rowIndex < data.menuCategs.length - 1) out.println("| ");
+			out.println("");
 		}
-		out.println("+==============>\n");
+		out.println("+================================================================================================>\n");
 		
 		// Student Ordering
 		out.println("+== FOOD ORDER ======>");
-		out.println("| > Guide ");
-		out.println("| | Category Index | 0=Breakfast | 1=Lunch | 2=Dinner");
-		out.println("| | Item Index | 0-4\n|");
 		for (int rowIndex = 0; rowIndex < data.studentNames.length; rowIndex++) {
 			// How many will the student order?
 			out.printf("| > Hi %s! How many will you order? ", data.studentNames[rowIndex]);
